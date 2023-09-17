@@ -14,6 +14,7 @@ insert_water_ubon2($date, $conn);
 insert_water_ubon3($date, $conn);
 insert_water_ubon4($date, $conn);
 insert_water_ubon5($date, $conn);
+
 function insert_wather_ubon()
 {
   include('connect.php');
