@@ -326,95 +326,103 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Visitors chart */
 
 
-    var ctx = document.getElementById('myChart');
-
-    if (ctx) {
-      var myCanvas = ctx.getContext('2d');
-      var myChart = new Chart(myCanvas, {
-        type: 'line',
-        data: {
-          labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-          datasets: [{
-            label: 'Last 6 months',
-            data: [35, 27, 40, 15, 30, 25, 45],
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgba(95, 46, 234, 1)'],
-            borderColor: ['rgba(95, 46, 234, 1)'],
-            borderWidth: 2
-          }, {
-            label: 'Previous',
-            data: [20, 36, 16, 45, 29, 32, 10],
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgba(75, 222, 151, 1)'],
-            borderColor: ['rgba(75, 222, 151, 1)'],
-            borderWidth: 2
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              min: 0,
-              max: 100,
-              ticks: {
-                stepSize: 25
-              },
-              grid: {
-                display: false
-              }
-            },
-            x: {
-              grid: {
-                color: gridLine
-              }
-            }
-          },
-          elements: {
-            point: {
-              radius: 2
-            }
-          },
-          plugins: {
-            legend: {
-              position: 'top',
-              align: 'end',
-              labels: {
-                boxWidth: 8,
-                boxHeight: 8,
-                usePointStyle: true,
-                font: {
-                  size: 12,
-                  weight: '500'
-                }
-              }
-            },
-            title: {
-              display: true,
-              text: ['Visitor statistics', 'Nov - July'],
-              align: 'start',
-              color: '#171717',
-              font: {
-                size: 16,
-                family: 'Inter',
-                weight: '600',
-                lineHeight: 1.4
-              }
-            }
-          },
-          tooltips: {
-            mode: 'index',
-            intersect: false
-          },
-          hover: {
-            mode: 'nearest',
-            intersect: true
-          }
-        }
-      });
-      charts.visitors = myChart;
-    }
-    /* Customers chart */
+    // var ctx = document.getElementById('myChart');
+    //
+    // if (ctx) {
+    //   var myCanvas = ctx.getContext('2d');
+    //   var myChart = new Chart(myCanvas, {
+    //     type: 'line',
+    //     data: {
+    //       labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+    //       datasets: [{
+    //         label: 'Last 6 months',
+    //         data: [99, 27, 40, 15, 30, 25, 45, 27, 40, 15, 30, 25],
+    //         cubicInterpolationMode: 'monotone',
+    //         tension: 0.4,
+    //         backgroundColor: ['rgba(95, 46, 234, 1)'],
+    //         borderColor: ['rgba(95, 46, 234, 1)'],
+    //         borderWidth: 2
+    //       },{
+    //         label: 'Last 6 months',
+    //         data: [33, 44, 55, 66, 77, 88, 99, 66, 55, 44, 33, 99],
+    //         cubicInterpolationMode: 'monotone',
+    //         tension: 0.4,
+    //         backgroundColor: ['rgba(95, 46, 234, 1)'],
+    //         borderColor: ['rgba(95, 46, 234, 1)'],
+    //         borderWidth: 2
+    //       }, {
+    //         label: 'Previous',
+    //         data: [20, 36, 16, 45, 29, 32, 10],
+    //         cubicInterpolationMode: 'monotone',
+    //         tension: 0.4,
+    //         backgroundColor: ['rgba(75, 222, 151, 1)'],
+    //         borderColor: ['rgba(75, 222, 151, 1)'],
+    //         borderWidth: 2
+    //       }]
+    //     },
+    //     options: {
+    //       scales: {
+    //         y: {
+    //           min: 0,
+    //           max: 100,
+    //           ticks: {
+    //             stepSize: 25
+    //           },
+    //           grid: {
+    //             display: false
+    //           }
+    //         },
+    //         x: {
+    //           grid: {
+    //             color: gridLine
+    //           }
+    //         }
+    //       },
+    //       elements: {
+    //         point: {
+    //           radius: 2
+    //         }
+    //       },
+    //       plugins: {
+    //         legend: {
+    //           position: 'top',
+    //           align: 'end',
+    //           labels: {
+    //             boxWidth: 8,
+    //             boxHeight: 8,
+    //             usePointStyle: true,
+    //             font: {
+    //               size: 12,
+    //               weight: '500'
+    //             }
+    //           }
+    //         },
+    //         title: {
+    //           display: true,
+    //           text: ['Visitor statistics', 'Nov - July'],
+    //           align: 'start',
+    //           color: '#171717',
+    //           font: {
+    //             size: 16,
+    //             family: 'Inter',
+    //             weight: '600',
+    //             lineHeight: 1.4
+    //           }
+    //         }
+    //       },
+    //       tooltips: {
+    //         mode: 'index',
+    //         intersect: false
+    //       },
+    //       hover: {
+    //         mode: 'nearest',
+    //         intersect: true
+    //       }
+    //     }
+    //   });
+    //   charts.visitors = myChart;
+    // }
+    // /* Customers chart */
 
 
     var customersChart = document.getElementById('customersChart');
