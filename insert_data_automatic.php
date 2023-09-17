@@ -191,11 +191,12 @@ function insert_water_ubon1($date, $conn)
   }
   $data1 = $amount_water_sql;
   $data2 = $val2;
-  if (($data1 - $data2) > 100) {
-    $val3 = $amount_water_sql;
-  } else {
+  //กรณีปรมาณน้ำหักล้างเกิน 100
+  // if (($data1 - $data2) > 100) {
+  //   $val3 = $amount_water_sql;
+  // } else {
     $val3 = $val2;
-  }
+  // }
   $level_water = $val1;
   $amount_water = $val3;
   $sql = "SELECT * FROM `val_water` WHERE `date` = '$date'";
